@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 echo "------ HOOK START - BUILD -------"
-curl -O https://mirrors.huaweicloud.com/openjdk/9/openjdk-9_linux-x64_bin.tar.gz |tar xvzf
+curl -o jdk-9.tar.gz https://mirrors.huaweicloud.com/openjdk/9/openjdk-9_linux-x64_bin.tar.gz
+tar xvzf jdk-9.tar.gz
 docker build -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
 
 echo "------ HOOK END - BUILD -------"
